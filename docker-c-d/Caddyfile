@@ -1,0 +1,43 @@
+{ 
+
+order trojan before route
+
+admin off
+
+auto_https off 
+
+log {
+  output discard #关闭日志文件输出
+  level INFO   
+}
+
+servers :443 {
+
+  listener_wrappers {
+    trojan #caddy-trojan插件应用必须配置
+  }
+
+  tls /root/.acme.sh/*.diffuse.gq_ecc/*.diffuse.gq.key /root/.acme.sh/*.diffuse.gq_ecc/*.diffuse.gq.cer
+  
+}
+
+trojan {
+  caddy
+  no_proxy
+  users test #修改为自己的密码。密码可多组,用空格隔开。
+}
+
+}
+
+:443 {
+
+trojan {
+  connect_method
+  websocket #开启WebSocket支持 
+} 
+
+file_server {
+  root /build #修改为自己存放的WEB文件路径
+}
+
+}

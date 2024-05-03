@@ -1,0 +1,20 @@
+postgres
+postgres:14.10-alpine
+
+127.0.0.1:5432
+5432
+
+/var/lib/docker/volumes/postgres/_data
+/var/lib/postgresql/data
+
+未手动停止则重启
+
+
+TZ=Asia/Shanghai
+POSTGRES_USER=postgres
+POSTGRES_PASSWORD=FqNR4Eei1AxTnt7tWXbZuZkUMZInlIjhZwxjxKSbJeS0lktOvMIoLiDQziHqudAX
+PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+LANG=en_US.utf8
+PG_SHA256=b1fe3ba9b1a7f3a9637dd1656dfdad2889016073fd4d35f13b50143cbbb6a8ef
+DOCKER_PG_LLVM_DEPS=llvm15-dev 		clang15
+PGDATA=/var/lib/postgresql/data

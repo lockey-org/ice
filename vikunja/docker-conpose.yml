@@ -1,0 +1,41 @@
+version: '3'
+
+services:
+  synapse:
+    container_name: vikunja
+    image: 'vikunja/api:latest'
+    restart: unless-stopped
+    ulimits:
+      memlock: -1
+      nproc: 65535
+      nofile:
+        soft: 65535
+        hard: 65535
+    volumes:
+      - /var/lib/docker/volumes/synapse/_data:/data
+    
+    environment:
+      VIKUNJA_DATABASE_TYPE: postgres
+      VIKUNJA_DATABASE_USER: vikunja
+      VIKUNJA_DATABASE_PASSWORD: Tdo^Owe=B@.(:$${Pcld^G}T8AY&o^z
+      VIKUNJA_DATABASE_HOST: 'postgres:5432'
+      VIKUNJA_DATABASE_NAME: vikunja
+      VIKUNJA_REDIS_ENABLED: 1
+      VIKUNJA_REDIS_HOST: 'dragonflydb:6379' 
+      VIKUNJA_CACHE_ENABLED: 1
+      VIKUNJA_CACHE_TYPE: redis
+
+    ports:
+      - 127.0.0.1:8008:8008
+    networks:
+     - nginx
+     - dragonflydb
+     - postgres
+
+networks:
+  nginx:
+    external: true
+  dragonflydb:
+    external: true
+  postgres:
+    external: true

@@ -1,0 +1,10 @@
+casdoor
+casbin/casdoor:latest
+
+127.0.0.1:8000
+8000
+
+/var/lib/docker/volumes/casdoor/_data
+/conf
+
+未手动停止则重启

@@ -1,0 +1,62 @@
+version: "3"
+
+services:
+  zipline:
+    container_name: zipline
+    image: ghcr.io/diced/zipline:v4
+    restart: unless-stopped
+    deploy:
+      resources:
+        limits:
+          memory: 1gb
+    ulimits:
+      memlock: -1
+      nproc: 65535
+      nofile:
+        soft: 65535
+        hard: 65535
+    environment:
+      # website
+      - WEBSITE_TITLE=Lockey
+      - WEBSITE_EXTERNAL_LINKS='[{"label":"Zipline","link":"https://github.com/diced/zipline"}]'
+      - WEBSITE_SHOW_VERSION=true
+
+      # core
+      - CORE_RETURN_HTTPS=false
+      - CORE_SECRET=95432f1f78ac9a8d2ae260ca146252338ef4dae5bff0222dbd3686d222b83455
+      - CORE_HOST=0.0.0.0
+      - CORE_PORT=3000
+      - CORE_DATABASE_URL=postgres://zipline:8ac9a8d2ae260ca146252338ef4d@postgres:5432/zipline
+      - CORE_LOGGER=true
+      # chunks
+      - CHUNKS_ENABLED=true
+      - CHUNKS_CHUNKS_SIZE=25mb
+      - CHUNKS_MAX_SIZE=95mb
+      # datasource s3
+      - DATASOURCE_S3_ACCESS_KEY_ID=jxdmo5qln476hayikzo7boa3qyda
+      - DATASOURCE_S3_SECRET_ACCESS_KEY=j2ghd6jjypm22ndjfj7b3hybh7pvsbrep6jfpawmh7un3vbkubuty
+      - DATASOURCE_S3_ENDPOINT=gateway.storjshare.io
+      - DATASOURCE_S3_BUCKET=zipline
+      - DATASOURCE_S3_FORCE_S3_PATH=false
+      # - DATASOURCE_S3_REGION=us-east-1
+      # OIDC
+      # - OAUTH_AUTHENTIK_CLIENT_ID=fc6791d350167022f486
+      # - OAUTH_AUTHENTIK_CLIENT_SECRET=b410333dc3e191947c5293f5c74bf8fb861bd463
+      # - OAUTH_AUTHENTIK_AUTHORIZE_URL=https://id.lkt.icu/login/oauth/authorize
+      # - OAUTH_AUTHENTIK_USERINFO_URL=https://id.lkt.icu/api/userinfo
+      # - OAUTH_AUTHENTIK_TOKEN_URL=https://id.lkt.icu/api/login/oauth/access_token
+
+    volumes:
+      - "/var/lib/docker/volumes/zipline/_data/uploads:/zipline/uploads"
+      - "/var/lib/docker/volumes/zipline/_data/public:/zipline/public"
+    ports:
+      - 127.0.0.1:3004:3000
+    networks:
+      - nginx
+      - postgres
+
+networks:
+  nginx:
+    external: true
+  postgres:
+    external: true

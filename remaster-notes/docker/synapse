@@ -1,0 +1,17 @@
+synapse
+synapse-s3:v1.97.0
+
+127.0.0.1:8008
+8008
+127.0.0.1:9000
+9000
+
+/var/lib/docker/volumes/synapse/_data
+/data
+
+未手动停止则重启
+
+SYNAPSE_REPORT_STATS=no
+SYNAPSE_SERVER_NAME=lkt.icu
+PATH=/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+LANG=C.UTF-8

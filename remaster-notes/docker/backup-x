@@ -1,0 +1,14 @@
+backup-x
+jeessy/backup-x
+
+127.0.0.1:9977
+9977
+
+/var/lib/docker/volumes/backup-x/_data
+/app/backup-x-files
+
+未手动停止则重启
+
+PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+TZ=Asia/Shanghai
+XDG_CONFIG_HOME=/app/backup-x-files

@@ -1,0 +1,19 @@
+
+curl https://get.acme.sh | sh -s email=my@example.com
+
+export CF_Key="1606174504b161f4c0089281233a7fbd3e596"
+export CF_Email="lockeyteam@yandex.com"
+
+echo ~/.acme.sh/account.conf
+
+
+# example
+acme.sh --issue --dns dns_cf -d example.com -d '*.example.com'
+
+
+acme.sh --issue --dns dns_cf -d lkt.icu -d '*.lkt.icu'
+
+
+# Install the cert to Apache/Nginx etc.
+
+acme.sh --install-cert -d lkt.icu -d '*.lkt.icu' --key-file /var/lib/docker/volumes/nginx/_data/nginx/cert/lkt.icu.acme-private.key  --fullchain-file /var/lib/docker/volumes/nginx/_data/nginx/cert/lkt.icu.acme-origin.cer  --reloadcmd "docker exec nginx /www/server/nginx/sbin/nginx -s reload"

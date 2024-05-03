@@ -1,0 +1,38 @@
+version: '3'
+
+services:
+  wiki-js:
+    container_name: wiki-js
+    image: 'requarks/wiki'
+    restart: unless-stopped
+    deploy:
+      resources:
+        limits:
+          memory: 1gb
+    ulimits:
+      memlock: -1
+      nproc: 65535
+      nofile:
+        soft: 65535
+        hard: 65535
+    environment:
+      #DB_TYPE: postgres
+      #DB_HOST: postgres
+      #DB_PORT: 5432
+      #DB_USER: wiki-js
+      #DB_PASS: xxxxxxxxxxxxxxxxxxxx
+      #DB_NAME: wiki-js
+      #PATH: /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+    volumes:
+      - /var/lib/docker/volumes/synapse/_data:/data
+    ports:
+      - 127.0.0.1:3000:3000
+    networks:
+     - nginx
+     - postgres
+
+networks:
+  nginx:
+    external: true
+  postgres:
+    external: true

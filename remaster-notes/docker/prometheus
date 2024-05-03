@@ -1,0 +1,10 @@
+prometheus
+prom/prometheus
+
+127.0.0.1:9090
+9090
+
+/var/lib/docker/volumes/prometheus/_data
+/etc/prometheus
+
+

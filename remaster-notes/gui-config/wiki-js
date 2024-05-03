@@ -1,0 +1,179 @@
+！先配置存储同步
+
+# https://lib.lkt.icu/a/storage
+
+Git
+
+ssh
+git@codeberg.org:lockeyteam/wiki-js.git
+main
+
+B - SSH Private Key Contents
+
+-----BEGIN OPENSSH PRIVATE KEY-----
+b3BlbnNzaC1rZXktdjEAAAAABG5vbmUAAAAEbm9uZQAAAAAAAAABAAAAaAAAABNl
+Y2RzYS1zaGEyLW5pc3RwMjU2AAAACG5pc3RwMjU2AAAAQQTivcDxxqmZ9xDmcNSN
+10s3rkdZglJ4mj07g3a0XUPgnHWmoWl+J2Ja7nO8jm7ukzus3IP4PA3SM7yur2fi
+442pAAAAwPu56G/7uehvAAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAy
+NTYAAABBBOK9wPHGqZn3EOZw1I3XSzeuR1mCUniaPTuDdrRdQ+CcdaahaX4nYlru
+c7yObu6TO6zcg/g8DdIzvK6vZ+LjjakAAAAhAPANUFweybr6HM3lFxRyUrDQ+9vn
+kJA0yfEJLVhpIHTMAAAAImVjZHNhLXNoYTItbmlzdHAyNTYtMjAyMzEyMDMxMzMy
+NTMBAgMEBQ==
+-----END OPENSSH PRIVATE KEY-----
+
+lockeyteam@yandex.com
+lockeyteam
+
+从目标中拉取
+
+每 5 分钟
+
+
+
+
+# https://lib.lkt.icu/a/general
+
+https://lib.lkt.icu
+知识库 | Lockey
+https://lkt.icu/assets/lockey4.2.webp
+Lockey
+内容许可证 无
+
+Features
+comments off
+
+修改快捷键
+快速编辑浮动菜单
+显示编辑菜单栏
+
+
+# https://lib.lkt.icu/a/locale
+
+中文
+
+
+# https://lib.lkt.icu/a/navigation
+
+自定义导航
+
+工程与技术
+mdi-tools
+
+人文与社科
+mdi-book-open-page-variant
+
+自然与科学
+mdi-telescope
+
+文化与艺术
+mdi-palette
+
+休闲与生活
+mdi-coffee
+
+档案馆
+mdi-archive
+
+说明
+mdi-note-text
+
+
+# https://lib.lkt.icu/a/pages
+
+
+
+
+# https://lib.lkt.icu/a/tags
+lockeyteam
+
+# https://lib.lkt.icu/a/groups
+
+https://lib.lkt.icu/a/groups/3
+Lockey Team
+
+
+PERMISSIONS
+Content
+Can view pages, as specified in the Page Rules
+Can create / edit pages, as specified in the Page Rules
+Can move existing pages as specified in the Page Rules
+Can delete existing pages, as specified in the Page Rules
+Can insert CSS styles in pages, as specified in the Page Rules
+Can insert JavaScript in pages, as specified in the Page Rules
+Can view pages source, as specified in the Page Rules
+Can view pages history, as specified in the Page Rules
+
+PAGE RULES
+Can view pages, as specified in the Page Rules
+Can create / edit pages, as specified in the Page Rules
+Can move existing pages as specified in the Page Rules
+Can delete existing pages, as specified in the Page Rules
+Can insert CSS styles in pages, as specified in the Page Rules
+Can insert JavaScript in pages, as specified in the Page Rules
+Can view pages source, as specified in the Page Rules
+Can view pages history, as specified in the Page Rules
+
+
+
+# https://lib.lkt.icu/a/analytics
+
+Umami Analytics v2
+07550dd9-6b0c-4a60-a5d8-c1c401696130
+https://umami.lkt.icu
+
+
+# https://lib.lkt.icu/a/auth
+
+使用 Lockey ID 继续
+fc6791d350167022f486
+b410333dc3e191947c5293f5c74bf8fb861bd463
+https://id.lkt.icu/login/oauth/authorize
+https://id.lkt.icu/api/login/oauth/access_token
+https://id.lkt.icu/api/userinfo
+
+https://id.lkt.icu
+email
+displayName
+
+groups
+开放注册
+
+分配给组 Lockey Team
+
+
+
+
+# https://lib.lkt.icu/a/rendering
+
+
+
+
+
+# https://lib.lkt.icu/a/search
+
+Algolia
+SS00A19LYF
+3f19b5046d8104447e80c97bf3a11944
+wiki-js
+
+
+# https://lib.lkt.icu/a/storage
+S3 Generic
+https://gateway.storjshare.io
+wiki-js
+jvlexx7gl7fimtlvm2vawdq5m3ha
+j3njjnw6i3wcswcg2ra2kvrvvm5zkwvhtp4k2ps3aaphchnyurx6m
+enable SSL
+force path style URLs for S3 objects
+
+
+# https://lib.lkt.icu/a/security
+
+登录
+https://static.lkt.icu
+隐藏本地身份验证提供程序
+
+
+令牌续签周期
+180d
+

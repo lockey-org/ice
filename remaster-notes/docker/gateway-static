@@ -1,0 +1,10 @@
+gateway-static
+storjlabs/gateway
+
+127.0.0.1:7777
+7777
+
+/var/lib/docker/volumes/gateway-static/_data
+/root/.local/share/storj/gateway/
+
+未手动停止则重启

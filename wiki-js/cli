@@ -1,0 +1,3 @@
+pgSQL
+
+ALTER TABLE users ALTER COLUMN timezone SET DEFAULT 'Asia/Shanghai'::character varying;

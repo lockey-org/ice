@@ -1,0 +1,38 @@
+docker exec nginx /www/server/nginx/sbin/nginx -t
+docker exec nginx /www/server/nginx/sbin/nginx -s reload
+
+docker exec nginx nginx -t
+docker exec nginx nginx -s reload
+
+docker network connect alist postgres
+docker network connect backup-x postgres
+docker network connect casdoor postgres
+docker network connect ihatemoney postgres
+docker network connect mattermost postgres
+docker network connect synapse postgres
+docker network connect vaultwarden postgres
+docker network connect wiki-js postgres
+
+
+docker network connect casdoor dragonflydb
+docker network connect outline dragonflydb
+docker network connect synapse dragonflydb
+
+docker network connect alist nginx
+docker network connect backup-x nginx
+docker network connect casdoor nginx
+docker network connect duplicati nginx
+docker network connect gateway nginx
+docker network connect grafana nginx
+docker network connect maubot nginx
+docker network connect mattermost nginx
+docker network connect microtalk nginx
+docker network connect ihatemoney nginx
+docker network connect prometheus nginx
+docker network connect synapse nginx
+docker network connect vaultwarden nginx
+docker network connect wiki-js nginx
+
+
+
+/var/lib/docker/volumes/synapse/_data

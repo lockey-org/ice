@@ -1,0 +1,9 @@
+maubot
+dock.mau.dev/maubot/maubot:latest
+
+127.0.0.1:29316
+29316
+
+/var/lib/docker/volumes/maubot/_data
+/data
+

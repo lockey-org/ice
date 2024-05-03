@@ -1,0 +1,210 @@
+# Configuration file for Synapse.
+#
+# This is a YAML file: see [1] for a quick introduction. Note in particular
+# that *indentation is important*: all the elements of a list or dictionary
+# should have the same indentation.
+#
+# [1] https://docs.ansible.com/ansible/latest/reference_appendices/YAMLSyntax.html
+#
+# For more information on how to configure Synapse, including a complete accounting of
+# each option, go to docs/usage/configuration/config_documentation.md or
+# https://matrix-org.github.io/synapse/latest/usage/configuration/config_documentation.html
+#
+# This is set in /etc/matrix-synapse/conf.d/server_name.yaml for Debian installations.
+public_baseurl: https://neo.lkt.icu
+server_name: "lkt.icu"
+pid_file: "/var/run/matrix-synapse.pid"
+
+listeners:
+  - port: 8008
+    tls: false
+    type: http
+    x_forwarded: true
+    bind_addresses: ['0.0.0.0']
+    resources:
+      - names: [client, federation]
+        compress: false
+      - port: 9000
+        type: metrics
+
+database:
+  name: psycopg2
+  args:
+    user: synapse
+    password: kVhd\h`jK1g_tHzuwI2B
+    database: synapse
+    host: postgres
+    cp_min: 5
+    cp_max: 10
+    keepalives_idle: 30
+    keepalives_interval: 10
+    keepalives_count: 3
+
+redis:
+  enabled: true
+  host: dragonflydb
+  port: 6379
+
+#log_config: "/data/localhost.log.config"
+#signing_key_path: "/data/localhost.signing.key"
+
+
+macaroon_secret_key : "fasejfnsdjzhfiowadfjmsdklz"
+registration_shared_secret: "v&bnEh6xDexuZ-TZPJg1n8Na2QL-6lBWxZgmh0QC*ly^vTto.^"
+suppress_key_server_warning: true
+trusted_key_servers:
+  - server_name: "matrix.org"
+  - server_name: "bgme.me"
+report_stats: false
+default_identity_server: https://lkt.icu
+serve_server_wellknown: true
+#default_room_version: "11"
+user_directory:
+    enabled: true
+    search_all_users: false
+    prefer_local_users: true
+enable_room_list_search: true
+require_membership_for_aliases: true
+auto_join_rooms:
+  - "#lockey-matrix:lkt.icu"
+# - "#anotherexampleroom:example.com"
+
+#server_notices:
+#  system_mxid_localpart: notices
+#  system_mxid_display_name: "Matrix Notices"
+#  system_mxid_avatar_url: "mxc://server.com/oumMVlgDnLYFaPVkExemNVVZ"
+#  room_name: "Server Notices"
+
+enable_metrics: true
+
+enable_search: true
+forgotten_room_retention_period: 14d
+
+
+url_preview_enabled: true
+url_preview_ip_range_blacklist:
+  - '127.0.0.0/8'
+#  - '10.0.0.0/8'
+#  - '172.16.0.0/12'
+#  - '192.168.0.0/16'
+#  - '100.64.0.0/10'
+#  - '192.0.0.0/24'
+#  - '169.254.0.0/16'
+#  - '192.88.99.0/24'
+#  - '198.18.0.0/15'
+#  - '192.0.2.0/24'
+#  - '198.51.100.0/24'
+#  - '203.0.113.0/24'
+#  - '224.0.0.0/4'
+#  - '::1/128'
+#  - 'fe80::/10'
+#  - 'fc00::/7'
+#  - '2001:db8::/32'
+#  - 'ff00::/8'
+#  - 'fec0::/10'
+
+enable_registration: false
+enable_registration_without_verification: true
+#registrations_require_3pid:
+#  - email
+#  - msisdn
+
+media_store_path: /data/media_stores
+max_avatar_size: 20M
+max_upload_size: 100M
+#enable_media_repo: true
+#media_storage_providers:
+#- module: s3_storage_provider.S3StorageProviderBackend
+#  store_local: True
+#  store_remote: True
+#  store_synchronous: True
+#  config:
+
+ # All of the below options are optional, for use with non-AWS S3-like
+    # services, or to specify access tokens here instead of some external method.
+#    region_name: AP1
+#    endpoint_url: https://gateway.storjshare.io
+#    access_key_id: jxdmo5qln476hayikzo7boa3qyda
+#    secret_access_key: j2ghd6jjypm22ndjfj7b3hybh7pvsbrep6jfpawmh7un3vbkubuty
+#    bucket: synapse
+#    # Server Side Encryption for Customer-provided keys
+#    #sse_customer_key: <S3_SSEC_KEY>
+#    # Your SSE-C algorithm is very likely AES256
+#    # Default is AES256.
+#    #sse_customer_algo: <S3_SSEC_ALGO>
+
+    # The object storage class used when uploading files to the bucket.
+    # Default is STANDARD.
+    #storage_class: "STANDARD_IA"
+
+    # The maximum number of concurrent threads which will be used to connect
+    # to S3. Each thread manages a single connection. Default is 40.
+    #
+    #threadpool_size: 20
+
+oidc_providers:
+  - idp_id: id
+    idp_name: Lockey ID
+    discover: false
+    issuer: "https://id.lkt.icu"  # 替换为您的 Casdoor URL
+    client_id: "fc6791d350167022f486"        # 替换为您在 Casdoor 中创建的客户端 ID
+    client_secret: "b410333dc3e191947c5293f5c74bf8fb861bd463"  # 替换为您在 Casdoor 中创建的客户端密钥
+    authorization_endpoint: "https://id.lkt.icu/login/oauth/authorize"  # 替换为 Casdoor 的授权终结点 URL
+    token_endpoint: "https://id.lkt.icu/api/login/oauth/access_token"            # 替换为 Casdoor 的令牌终结点 URL
+    userinfo_endpoint: "https://id.lkt.icu/api/userinfo"        # 替换为 Casdoor 的用户信息终结点 URL
+    jwks_uri: "https://id.lkt.icu/.well-known/jwks"
+    scopes: ["openid", "profile", "email"] # email is optional, read below 根据需要设置 OIDC 范围
+    user_mapping_provider:
+      config:
+        subject_claim: "sub"  # 根据 Casdoor OIDC 配置中的声明名称设置
+        localpart_template: "{{ user.name }}"
+        display_name_template: "{{ user.display_name }}"
+
+
+#email:
+#  smtp_host: "wednesday.mxrouting.net"
+#  smtp_port: 465
+#  smtp_user: "no-reply@lkt.icu"
+#  smtp_pass: "WstYiOAuWYwta3uc"
+#  require_transport_security: true
+#  notif_from: "Lockey Matrix <matrix@lkt.icu>"
+#  client_base_url: "https://lkt.icu/"
+
+
+
+# TURN SERVER
+
+# expressturn-registered
+TURN:
+turn_uris: [ "turn:relay1.expressturn.com:3478?transport=tcp", "turn:relay1.expressturn.com:3478?transport=udp" ]
+turn_username: "efIE7RX6GNEFAV02VC"
+turn_password: "La9GZj8wOBHGV5A7"
+turn_user_lifetime: 86400
+turn_allow_guests: true
+
+
+# openrelay-project
+#TURN:
+#turn_uris: [ "turns:staticauth.openrelay.metered.ca:443" ]
+#turn_shared_secret: "openrelayprojectsecret"
+#turn_allow_guests: true
+
+
+# metered-registered
+#TURN:
+#turn_uris: [ "turn:a.relay.metered.ca:80?transport=tcp", "turn:a.relay.metered.ca:443?transport=tcp" ]
+#turn_username: "e4eb4b878d1ce413881e13bd"
+#turn_password: "0EF3ny6Bi6yEv/6R"
+#turn_user_lifetime: 86400
+#turn_allow_guests: true
+
+
+# twilio
+#TURN:
+#turn_uris: [ "turn:global.turn.twilio.com:443?transport=tcp", "turn:global.turn.twilio.com:3478?transport=udp", "turn:global.turn.twilio.com:3478?transport=tcp" ]
+#turn_username: "dc2d2894d5a9023620c467b0e71cfa6a35457e6679785ed6ae9856fe5bdfa269"
+#turn_password: "tE2DajzSJwnsSbc123"
+#turn_user_lifetime: 86400
+#turn_allow_guests: true
+
+

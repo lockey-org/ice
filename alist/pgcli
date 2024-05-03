@@ -1,0 +1,4 @@
+createuser -U lockeyteam --pwprompt alist
+vZHe9cztKLeDJvJJ
+vZHe9cztKLeDJvJJ
+createdb -U lockeyteam --encoding=UTF8 --locale=C --template=template0 --owner=alist alist

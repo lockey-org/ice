@@ -1,0 +1,33 @@
+version: '3'
+
+services:
+  synapse:
+    container_name: synapse
+    image: 'matrixdotorg/synapse:latest'
+    restart: unless-stopped
+    deploy:
+      resources:
+        limits:
+          memory: 1gb
+    ulimits:
+      memlock: -1
+      nproc: 65535
+      nofile:
+        soft: 65535
+        hard: 65535
+    volumes:
+      - /var/lib/docker/volumes/synapse/_data:/data
+    ports:
+      - 127.0.0.1:8008:8008
+    networks:
+     - nginx
+     - dragonflydb
+     - postgres
+
+networks:
+  nginx:
+    external: true
+  dragonflydb:
+    external: true
+  postgres:
+    external: true

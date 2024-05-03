@@ -1,0 +1,8 @@
+microtalk
+mirotalk/p2p
+
+127.0.0.1:3000
+3000
+
+/var/lib/docker/volumes/microtalk/_data
+/src

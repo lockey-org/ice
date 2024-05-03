@@ -1,0 +1,17 @@
+createuser -U postgres --pwprompt synapse
+createdb -U postgres --encoding=UTF8 --locale=C --template=template0 --owner=synapse synapse
+dropdb -U postgres synapse
+dropuser -U postgres synapse
+
+
+
+
+psql -U synapse -h localhost
+update  users SET admin = 1 WHERE name = '@postgres:lkt.icu';
+
+
+
+createuser  -U postgres --pwprompt matrix_media
+vnDAKV0IBLARi7s3
+vnDAKV0IBLARi7s3
+createdb -U postgres --encoding=UTF8 --locale=C --template=template0 --owner=matrix_media matrix_media_repo

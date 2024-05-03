@@ -1,0 +1,22 @@
+alist
+xhofe/alist
+
+127.0.0.1:5244
+5244
+
+/var/lib/docker/volumes/alist/_data
+/opt/alist/data
+
+
+未手动停止则重启
+
+DB_TYPE=postgres
+DB_HOST=postgres
+DB_USER=alist
+DB_PASS=vZHe9cztKLeDJvJJ
+DB_TABLE_PREFIX=alist_
+#CDN=https://cdn.jsdelivr.net/npm/alist-web@$version/dist (you can also use other CDN. but this CDN is tested and working.)
+DB_PORT=5432
+PORT=5244
+DB_NAME=alist
+DB_SSL_MODE=disable

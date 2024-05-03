@@ -1,0 +1,31 @@
+version: '3'
+
+services:
+  casdoor:
+    image: casbin/casdoor
+    container_name: casdoor
+    restart: unless-stopped
+    ulimits:
+      nproc: 65535
+      nofile:
+        soft: 65535
+        hard: 65535
+    volumes:
+      - /var/lib/docker/volumes/casdoor/_data:/conf
+      - /etc/timezone:/etc/timezone
+      - /etc/localtime:/etc/localtime
+    #environment:
+
+    ports:
+      - 127.0.0.1:8000:8000
+    networks:
+     - nginx
+     - dragonflydb
+     - postgres
+networks:
+  nginx:
+    external: true
+  dragonflydb:
+    external: true
+  postgres:
+    external: true

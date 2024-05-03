@@ -1,0 +1,2 @@
+import_synapse -config /etc/matrix-media-repo/config.yaml -dbname synapse -dbusername synapse -dbpassword kvhd\h`jk1g_thzuwi2b -servername lkt.icu
+import_synapse -config /data/matrix-media.yaml -dbHost postgres -dbName synapse -dbUsername synapse -dbPassword kVhd\h`jK1g_tHzuwI2B -serverName lkt.icu

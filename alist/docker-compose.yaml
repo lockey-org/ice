@@ -1,0 +1,45 @@
+version: '3'
+
+services:
+  alist:
+    container_name: alist
+    image: 'xhofe/alist'
+    restart: unless-stopped
+    deploy:
+      resources:
+        limits:
+          memory: 1gb
+    ulimits:
+      memlock: -1
+      nproc: 65535
+      nofile:
+        soft: 65535
+        hard: 65535
+    environment:
+      PATH: /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+      PUID: 0
+      PGID: 0
+      UMASK: 022
+      DB_TYPE: postgres
+      DB_HOST: postgres
+      DB_USER: alist
+      DB_PASS: xxxxxxxxxxxxxxx
+      DB_TABLE_PREFIX: alist_
+      #CDN: https://cdn.jsdelivr.net/npm/alist-web@$version/dist (you can also use other CDN. but this CDN is tested and working.)
+      DB_PORT: 5432
+      PORT: 5244
+      DB_NAME: alist
+      DB_SSL_MODE: disable
+    volumes:
+      - /var/lib/docker/volumes/alist/_data:/opt/alist/data
+    ports:
+      - 127.0.0.1:3000:3000
+    networks:
+     - nginx
+     - postgres
+
+networks:
+  nginx:
+    external: true
+  postgres:
+    external: true

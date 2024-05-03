@@ -1,0 +1,9 @@
+DATABASE_URL=user=lockeyteam password=6hMZqwuTAkm7 dbname=neondb host=ep-weathered-block-50728715.us-east-2.aws.neon.tech sslmode=verify-full
+LISTEN_ADDR=0.0.0.0:8080
+BASE_URL=http://localhost
+OAUTH2_PROVIDER=id
+OAUTH2_CLIENT_ID=fc6791d350167022f486
+OAUTH2_CLIENT_SECRET=b410333dc3e191947c5293f5c74bf8fb861bd463
+OAUTH2_OIDC_DISCOVERY_ENDPOINT=https://id.lkt.icu
+OAUTH2_REDIRECT_URL=https://rss.lkt.icu/oauth2/oidc/callback
+OAUTH2_USER_CREATION=true

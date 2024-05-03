@@ -1,0 +1,10 @@
+grafana
+grafana/grafana
+
+127.0.0.1:3000
+3000
+
+/var/lib/docker/volumes/grafana/_data
+/var/lib/grafana
+
+未手动停止则重启

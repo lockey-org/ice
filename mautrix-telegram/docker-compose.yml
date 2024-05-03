@@ -1,0 +1,15 @@
+version: "3"
+
+services:
+  mautrix-$bridge:
+    container_name: mautrix-telegram
+    image: dock.mau.dev/mautrix/telegram:latest
+    restart: unless-stopped
+    volumes:
+    - /var/lib/docker/volumes/mautrix-telegram/_data:/data
+
+
+
+#docker run --rm -v /var/lib/docker/volumes/mautrix-telegram/_data:/data:z dock.mau.dev/mautrix/telegram:latest
+
+

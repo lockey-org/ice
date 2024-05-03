@@ -1,0 +1,54 @@
+
+
+# alist
+createuser -U postgres --pwprompt alist
+createdb -U postgres --encoding=UTF8 --locale=C --template=template0 --owner=alist alist
+vZHe9cztKLeDJvJJ
+vZHe9cztKLeDJvJJ
+
+
+# synapse
+createuser -U postgres --pwprompt synapse
+createdb -U postgres --encoding=UTF8 --locale=C --template=template0 --owner=synapse synapse
+kVhd\h`jK1g_tHzuwI2B
+kVhd\h`jK1g_tHzuwI2B
+
+
+# casdoor
+createuser -U postgres --pwprompt casdoor
+createdb -U postgres --encoding=UTF8 --locale=C --template=template0 --owner=casdoor casdoor
+Bwz{&^%8*A?k{Yz/KxH!
+Bwz{&^%8*A?k{Yz/KxH!
+
+
+# ihatemoney
+createuser -U postgres --pwprompt ihatemoney
+createdb -U postgres --encoding=UTF8 --locale=C --template=template0 --owner=ihatemoney ihatemoney
+zqX9erFNCm1nAItu
+zqX9erFNCm1nAItu
+
+
+# mattermost
+createuser -U postgres --pwprompt mattermost
+createdb -U postgres --encoding=UTF8 --locale=C --template=template0 --owner=mattermost mattermost
+zHgdBe16ZBesCE9eFROxmL1EX7tKQvFuYTneko
+zHgdBe16ZBesCE9eFROxmL1EX7tKQvFuYTneko
+
+# maubot
+createuser -U postgres --pwprompt maubot
+createdb -U postgres --encoding=UTF8 --locale=C --template=template0 --owner=maubot maubot
+LxLe4apxF9tZ3fy3fs4CKTNDUxKdfdei
+LxLe4apxF9tZ3fy3fs4CKTNDUxKdfdei
+
+
+# vaultwarden
+createuser -U postgres --pwprompt vaultwarden
+createdb -U postgres --encoding=UTF8 --locale=C --template=template0 --owner=vaultwarden vaultwarden
+vGRIYz8HTzY9wVufiZFrdNrWtbLBZLWwHH978ZXM2aCja2ynIPS6jNH3RnFSTfhI
+vGRIYz8HTzY9wVufiZFrdNrWtbLBZLWwHH978ZXM2aCja2ynIPS6jNH3RnFSTfhI
+
+# wiki-js
+createuser -U postgres --pwprompt wiki-js
+createdb -U postgres --encoding=UTF8 --locale=C --template=template0 --owner=wiki-js wiki-js
+XpzAEAZGAkqb6ps6
+XpzAEAZGAkqb6ps6

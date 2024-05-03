@@ -1,0 +1,13 @@
+TZ=Asia/Shanghai
+SIGNUPS_ALLOWED=false
+INVITATIONS_ALLOWED=true
+ADMIN_TOKEN=2ddLXKzSGrxSIsPEuaZgJ3Yx74XhwDf28ekfW20Qj8BI47H960tKn7WOxodht+wO
+DATABASE_URL=postgresql://vaultwarden:Fj3_1;a]"+8l8=zGmXSe@postgres:5432/vaultwarden
+LOG_FILE=/data/vaultwarden.log
+LOG_LEVEL=warn
+SHOW_PASSWORD_HINT=false
+DOMAIN=https://pass.lkt.icu
+PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+ROCKET_PROFILE=release
+ROCKET_ADDRESS=0.0.0.0
+ROCKET_PORT=80

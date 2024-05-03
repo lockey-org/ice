@@ -1,0 +1,10 @@
+matrix-media-repo
+turt2live/matrix-media-repo
+
+127.0.0.1:10002
+8000
+
+网络：synapse
+
+/var/lib/docker/volumes/synapse/_data
+/data
